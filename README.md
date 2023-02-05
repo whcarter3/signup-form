@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# Mock Signup Form
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This form is a mock signup form for a fictional company. It is a single page form that collects the following information:
+
+- Username
+- Password (with confirmation)
+
+The form checks if the password is the same, and returns an error state if the password doesn't match.
+
+If all fields are filled out, and passwords match, the form will mock a successful submission and returns a success state to the user.
 
 ## Available Scripts
 
