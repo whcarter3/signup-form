@@ -35,7 +35,7 @@ const SignupForm: React.FC = () => {
       setFormData({
         ...formData,
         error: 'Passwords do not match',
-        buttonLabel: 'Check Errors',
+        buttonLabel: 'Try Again',
       });
       setFormStatus(FormStatus.ERROR);
     } else {
