@@ -3,7 +3,6 @@ import InputField from './input';
 
 interface FormState {
   username: string;
-  email: string;
   password: string;
   confirmPassword: string;
   error: string;
@@ -21,7 +20,6 @@ const SignupForm: React.FC = () => {
   const [formData, setFormData] = useState<FormState>({
     username: '',
     password: '',
-    email: '',
     confirmPassword: '',
     error: '',
     buttonLabel: 'Sign Up',
@@ -48,6 +46,17 @@ const SignupForm: React.FC = () => {
       });
       setFormStatus(FormStatus.SUBMITTING);
       // Here is where we would submit the form data to the server
+      // For now, we'll just simulate a successful submission
+      setTimeout(() => {
+        setFormStatus(FormStatus.SUCCESS);
+        setFormData({
+          username: '',
+          password: '',
+          confirmPassword: '',
+          error: '',
+          buttonLabel: 'Sign Up',
+        });
+      }, 2000);
     }
   };
 
@@ -68,15 +77,6 @@ const SignupForm: React.FC = () => {
             value={formData.username}
             onChange={(e) =>
               setFormData({ ...formData, username: e.target.value })
-            }
-            required={true}
-          />
-          <InputField
-            label="Email"
-            type="email"
-            value={formData.email}
-            onChange={(e) =>
-              setFormData({ ...formData, email: e.target.value })
             }
             required={true}
           />
